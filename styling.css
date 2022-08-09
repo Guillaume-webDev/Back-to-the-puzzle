@@ -1,5 +1,93 @@
 @import url('http://fonts.cdnfonts.com/css/games');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body{
+  font-family: 'Games', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url(https://cdn.bewaremag.com/wp-content/uploads/2015/10/back-to-the-future-delorean.jpg?strip=all&lossy=1&w=2560&ssl=1);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.allContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+}
+.gifdelo{
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  width: 23vw;
+  background-image: url('./Images/good212419.gif');
+}
+#title{
+  font-size: 35px;
+  color: #b50d13;
+  margin-left: 350px;
+}
+.textButton{
+  font-family: inherit;
+  width: 25vw;
+  height: 50px;
+  font-size: 30px;
+  color: #b50d13;
+  background:none; 
+  border:none;
+}
+#startButton:hover, #rulesButton:hover {
+  text-shadow: 2px 4px 0px rgba(238, 93, 15, 0.982);
+}
+
+.mute {
+  background-repeat: no-repeat;
+  width: 30px;
+  background-image: url('./Images/mute-off.svg');
+  border: none;
+}
+.popUp {
+  position: fixed;
+  border: 2px white solid;
+  background-color: black;
+  color: #d85116;
+  width: 60vw;
+  height: 60vh;
+  top: 10vh;
+  text-align: center;
+  font-size: 50px;
+}
+.hidden {
+  display: none;
+}
+
+.cacher {
+  display: none;
+}
+
+.grid {
+  border: 1px solid white;
+  background-color: white;
+  width: 800px;
+  height: 400px;
+  position: fixed;
+  top: 20vh;
+}
+
+.cell {
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+}
+
+/* body{
   font-family: 'Games', sans-serif;
   height: 100vh;
   display: grid;
@@ -21,8 +109,6 @@ body{
   height: 200px;
   width: 23vw;
   background-image: url('./Images/good212419.gif');
-  margin-left: -870px;
-  margin-top: 490px;
 }
 .textButton{
   font-family: inherit;
@@ -47,6 +133,6 @@ body{
   background-image: url('./Images/mute-off.svg');
 }
 
-.textButton:hover{
+#startButton:hover, #rulesButton:hover{
   text-shadow: 2px 4px 0px rgba(238, 93, 15, 0.982);
-}
+} */
