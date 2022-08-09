@@ -1,32 +1,42 @@
-const button = document.getElementById('rulesButton'); // Assumes element with id='button'
+const rulesButton = document.getElementById('rulesButton');
+const gridWidth = 8
+const gridHeight = 8
+const startButton = document.getElementById('startButton');
 
+startButton.addEventListener('click', () => {
+     addCells()
+    });
+rulesButton.addEventListener('click', () => {
+    const form = document.querySelector('.popUp');
 
+    if (form.style.display === 'none') {
+      // this SHOWS the form
+      form.style.display = 'block';
+    } else {
+      // this HIDES the form
+      form.style.display = 'none';
+    }
+  });
+ const grid = document.querySelector('.grid')
+ const cells = []
 
-// const grid = document.getElementById('grid')
-// const cells = []
+function createCell() {
+  const cell = document.createElement('div')
+  cell.classList.add('cell')
+  grid.append(cell)
 
-// let playerPosition = 23
+  cells.push(cell)
+}
 
-// console.log(grid)
+function addCells() {
+  for (let i = 0; i < gridWidth * gridHeight; i++) {
+    createCell()
+  }
+}
 
-// function addCell() {
-//   const cell = document.createElement('div')
-//   cell.classList.add('cell')
-//   grid.append(cell)
-
-//   // keep the cell for later
-//   cells.push(cell)
-// }
-
-// function add100Cells() {
-//   for (let i = 0; i < 100; i++) {
-//     addCell()
-//   }
-// }
-
-add100Cells()
-// const rulesButton = document.getElementById('rulesButton')
- 
-// button.addEventListener('click', function() {
-    
-// })
+const inventory = {
+    element: null,
+    add() {
+      // iteration 3
+    }
+}

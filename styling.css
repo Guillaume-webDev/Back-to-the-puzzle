@@ -28,7 +28,10 @@ body{
   height: 200px;
   width: 23vw;
   background-image: url('./Images/good212419.gif');
+  align-content: flex-end;
+  justify-content: center;
 }
+
 #title{
   font-size: 35px;
   color: #b50d13;
@@ -67,72 +70,39 @@ body{
 .hidden {
   display: none;
 }
-
-.cacher {
-  display: none;
-}
-
 .grid {
+  display: flex;
+  flex-wrap: wrap;
   border: 1px solid white;
-  background-color: white;
-  width: 800px;
-  height: 400px;
+  background-color: black;
+  width: 1000px;
+  height: 500px;
   position: fixed;
   top: 20vh;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
-
 .cell {
-  border: 1px solid black;
-  width: 50px;
-  height: 50px;
+  border: 1px solid white;
+  width: 80px;
+  height: 80px;
 }
-
-/* body{
-  font-family: 'Games', sans-serif;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 100px 1fr 1fr 50px;
-  grid-template-rows: minmax(20px, 25%) minmax(200px, 50%) minmax(10px, 25%);
-  background-image: url(https://cdn.bewaremag.com/wp-content/uploads/2015/10/back-to-the-future-delorean.jpg?strip=all&lossy=1&w=2560&ssl=1);
-  background-size: cover;
-  background-repeat: no-repeat;
+.delorean {
+  background-image: url(./Images/deloreanresize.jpg);
 }
-#title{
-  display: flex;
-  align-self: end;
-  font-size: 35px;
-  margin: 0 50px 0 0px;
-  color: #b50d13;
+.hoverboard{
+  background-image: url(./Images/hoverboard.png)
 }
-.gifdelo{
-  display: flex;
-  height: 200px;
-  width: 23vw;
-  background-image: url('./Images/good212419.gif');
+.cityhall{
+  background-image: url(./Images/cityhall.png);
 }
-.textButton{
-  font-family: inherit;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  align-content: flex-start;
-  width: 25vw;
-  height: 50px;
-  font-size: 30px;
-  color: #b50d13;
-  background:none; 
-  border:none;
+.mcfly{
+  background-image: url(./Images/mcfly.jpg);
 }
-
-.mute {
-  display: flex;
-  all: unset;
-  background-repeat: no-repeat;
-  background-size: 30%;
-  background-image: url('./Images/mute-off.svg');
+.curve{
+  background-image: url(./Images/curve.png);
 }
-
-#startButton:hover, #rulesButton:hover{
-  text-shadow: 2px 4px 0px rgba(238, 93, 15, 0.982);
-} */
+.straight{
+  background-image: url(./Images/straight.png);
+}
