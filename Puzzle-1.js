@@ -96,7 +96,7 @@ function addCells() {
 
 grid.addEventListener("click", (event) => {
   event.target.classList.toggle("horizontal");
-console.log(event.target.className)
+  console.log(event.target.className);
   if (event.target.classList.contains("curve")) {
     if (event.target.classList.contains("southWest")) {
       event.target.classList.add("northWest");
@@ -113,16 +113,67 @@ console.log(event.target.className)
     }
   }
 });
- const map = [
-   ["delorean", "straight", "straight", "curve southWest"],
-   ["curve southWest", "straight", "straight", "curve southWest", "curve southWest", "straight", "curve southWest"],
-   ["curve southWest", "straight", "straight", "straight", "curve southWest", "", "straight"],
-   ["", "", "curve southWest", "straight", "straight", "straight", "curve southWest"],
-   ["", "", "straight", "", ],
-   ["curve southWest", "straight", "curve southWest", "", "curve southWest", "straight", "straight", "curve southWest"],
-   ["straight", "", "", "", "straight", "curve southWest", "straight", "curve southWest"],
-   ["curve southWest", "straight", "straight", "straight", "curve southWest", "curve southWest", "straight", "mcfly"],
- ];
+const map = [
+  ["delorean", "straight", "straight", "curve southWest"],
+  [
+    "curve southWest",
+    "straight",
+    "straight",
+    "curve southWest",
+    "curve southWest",
+    "straight",
+    "curve southWest",
+  ],
+  [
+    "curve southWest",
+    "straight",
+    "straight",
+    "straight",
+    "curve southWest",
+    "",
+    "straight",
+  ],
+  [
+    "",
+    "",
+    "curve southWest",
+    "straight",
+    "straight",
+    "straight",
+    "curve southWest",
+  ],
+  ["", "", "straight", ""],
+  [
+    "curve southWest",
+    "straight",
+    "curve southWest",
+    "",
+    "curve southWest",
+    "straight",
+    "straight",
+    "curve southWest",
+  ],
+  [
+    "straight",
+    "",
+    "",
+    "",
+    "straight",
+    "curve southWest",
+    "straight",
+    "curve southWest",
+  ],
+  [
+    "curve southWest",
+    "straight",
+    "straight",
+    "straight",
+    "curve southWest",
+    "curve southWest",
+    "straight",
+    "mcfly",
+  ],
+];
 
 function createMap() {
   map.forEach((row, i) => {
@@ -130,9 +181,94 @@ function createMap() {
       if (!cell) {
         return;
       }
-      const classes = cell.split(' ')
+      const classes = cell.split(" ");
       //console.log(classes);
       cells[i * 8 + j].classList.add(...classes);
     });
   });
+}
+// const winMap = [
+//   ["delorean", "straight", "straight", "curve southWest"],
+//   ["curve southEast", "straight", "straight", "curve northWest", "curve southEast", "straight", "curve southWest"],
+//  ];
+
+// function win () {
+//   if
+// }
+
+const winMap = [
+  "cell delorean",
+  "cell straight",
+  "cell straight",
+  "cell curve southWest",
+  "cell",
+  "cell",
+  "cell",
+  "cell",
+  "cell curve horizontal southEast",
+  "cell straight",
+  "cell straight",
+  "cell curve horizontal northWest",
+  "cell curve horizontal southEast",
+  "cell straight",
+  "cell curve southWest",
+  "cell",
+  "cell curve northEast",
+  "cell straight",
+  "cell straight",
+  "cell straight",
+  "cell curve horizontal northWest",
+  "cell",
+  "cell straight horizontal",
+  "cell",
+  "cell",
+  "cell",
+  "cell curve horizontal southEast",
+  "cell straight",
+  "cell straight",
+  "cell straight",
+  "cell curve horizontal northWest",
+  "cell",
+  "cell",
+  "cell",
+  "cell straight horizontal",
+  "cell",
+  "cell",
+  "cell",
+  "cell",
+  "cell",
+  "cell curve horizontal southEast",
+  "cell straight",
+  "cell curve horizontal northWest",
+  "cell",
+  "cell curve horizontal southEast",
+  "cell straight",
+  "cell straight",
+  "cell curve southWest",
+  "cell straight horizontal",
+  "cell",
+  "cell",
+  "cell",
+  "cell straight horizontal",
+  "cell curve horizontal southEast",
+  "cell straight",
+  "cell curve horizontal northWest",
+  "cell curve northEast",
+  "cell straight",
+  "cell straight",
+  "cell straight",
+  "cell curve horizontal northWest",
+  "cell curve northEast",
+  "cell straight",
+  "cell mcfly"
+]
+
+function getMapFromCurrentGame() {
+  return cells.map(function (cell) {
+    return Array.from(cell.classList).join(" ");
+  });
+}
+
+function checkWin() {
+  
 }

@@ -61,10 +61,8 @@ body{
   text-shadow: 2px 4px 0px rgba(238, 93, 15, 0.982);
 }
 
-.mute {
-  background-repeat: no-repeat;
-  width: 30px;
-  border: none;
+.timer {
+  color: #b50d13;
 }
 .popUp {
   position: fixed;
