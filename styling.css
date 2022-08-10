@@ -1,4 +1,18 @@
-@import url('http://fonts.cdnfonts.com/css/games');
+@font-face {
+  font-family: 'Games';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Games'), url('https://fonts.cdnfonts.com/s/14926/Games.woff') format('woff');
+}
+@font-face {
+  font-family: 'Games';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Games'), url('https://fonts.cdnfonts.com/s/14926/Games-Italic.woff') format('woff');
+}
+
+
+
 *{
   box-sizing: border-box;
   margin: 0;

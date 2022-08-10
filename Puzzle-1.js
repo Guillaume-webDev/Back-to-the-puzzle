@@ -69,7 +69,7 @@ grid.addEventListener("click", (event) => {
   }
 });
  const map = [
-   ["delorean", "straight", "straight", "curve.southWest"],
+   ["delorean", "straight", "straight", "curve"],
    ["curve", "straight", "straight", "curve", "curve", "straight", "curve"],
    ["curve", "straight", "straight", "straight", "curve", "", "straight"],
    ["", "", "curve", "straight", "straight", "straight", "curve"],
