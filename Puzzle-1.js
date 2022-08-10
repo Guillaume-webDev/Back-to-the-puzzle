@@ -214,8 +214,16 @@ function getMapFromCurrentGame() {
   });
 }
 
-function checkWin() {
-  if(cells[index].classList.contains('winMap'))
-  return true;
-  alert("You won!!")
-}
+// iteration 1
+
+// don't know how to implement that function when the user finish the puzzle and then display the alert You won !!
+
+// function checkWin() {
+//   alert("You won!!")
+// }
+
+//iteration 2 and 3
+
+//put a timer and start it when you open a new game and add a loosing condition when the timer is finished with an alert
+
+// and add a restart/reset button
