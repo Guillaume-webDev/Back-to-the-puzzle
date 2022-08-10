@@ -45,53 +45,6 @@ function addCells() {
   for (let i = 0; i < gridWidth * gridHeight; i++) {
     createCell();
   }
-  // cells[0].classList.add("delorean");
-  // cells[1].classList.add("straight", "horizontal");
-  // cells[2].classList.add("straight", "horizontal");
-  // cells[3].classList.add("curve", "southWest");
-  // cells[8].classList.add("curve", "southWest");
-  // cells[9].classList.add("straight", "horizontal");
-  // cells[10].classList.add("straight", "horizontal");
-  // cells[11].classList.add("curve", "southWest");
-  // cells[12].classList.add("curve", "southWest");
-  // cells[13].classList.add("straight", "horizontal");
-  // cells[14].classList.add("curve", "southWest");
-  // cells[16].classList.add("curve", "southWest");
-  // cells[17].classList.add("straight", "horizontal");
-  // cells[18].classList.add("straight", "horizontal");
-  // cells[19].classList.add("straight", "horizontal");
-  // cells[20].classList.add("curve", "southWest");
-  // cells[22].classList.add("straight", "horizontal");
-  // cells[26].classList.add("curve", "southWest");
-  // cells[27].classList.add("straight", "horizontal");
-  // cells[28].classList.add("straight", "horizontal");
-  // cells[29].classList.add("straight", "horizontal");
-  // cells[30].classList.add("curve", "southWest");
-  // cells[34].classList.add("straight", "horizontal");
-  // cells[37].classList.add("curve", "southWest");
-  // cells[38].classList.add("straight", "horizontal");
-  // cells[39].classList.add("curve", "southWest");
-  // cells[40].classList.add("curve", "southWest");
-  // cells[41].classList.add("straight", "horizontal");
-  // cells[42].classList.add("curve", "southWest");
-  // cells[43].classList.add("curve", "southWest");
-  // cells[44].classList.add("straight", "horizontal");
-  // cells[45].classList.add("curve", "southWest");
-  // cells[47].classList.add("straight", "horizontal");
-  // cells[48].classList.add("straight", "horizontal");
-  // cells[51].classList.add("curve", "southWest");
-  // cells[52].classList.add("curve", "southWest");
-  // cells[53].classList.add("curve", "southWest");
-  // cells[54].classList.add("straight", "horizontal");
-  // cells[55].classList.add("curve", "southWest");
-  // cells[56].classList.add("curve", "southWest");
-  // cells[57].classList.add("straight", "horizontal");
-  // cells[58].classList.add("straight", "horizontal");
-  // cells[59].classList.add("straight", "horizontal");
-  // cells[60].classList.add("curve", "southWest");
-  // cells[61].classList.add("curve", "southWest");
-  // cells[62].classList.add("straight", "horizontal");
-  // cells[63].classList.add("mcfly");
 }
 
 grid.addEventListener("click", (event) => {
@@ -187,14 +140,6 @@ function createMap() {
     });
   });
 }
-// const winMap = [
-//   ["delorean", "straight", "straight", "curve southWest"],
-//   ["curve southEast", "straight", "straight", "curve northWest", "curve southEast", "straight", "curve southWest"],
-//  ];
-
-// function win () {
-//   if
-// }
 
 const winMap = [
   "cell delorean",
@@ -270,5 +215,7 @@ function getMapFromCurrentGame() {
 }
 
 function checkWin() {
-  
+  if(cells[index].classList.contains('winMap'))
+  return true;
+  alert("You won!!")
 }

@@ -40,13 +40,16 @@ body{
   height: 200px;
   width: 23vw;
   background-image: url('./Images/good212419.gif');
+  margin-top: 350px;
+  margin-left: 30px;
+
 
 }
 
 #title{
   font-size: 35px;
   color: #b50d13;
-  margin-left: 350px;
+  margin-left: 300px;
 }
 .textButton{
   font-family: inherit;
