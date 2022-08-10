@@ -64,7 +64,6 @@ body{
 .mute {
   background-repeat: no-repeat;
   width: 30px;
-  background-image: url('./Images/mute-off.svg');
   border: none;
 }
 .popUp {
