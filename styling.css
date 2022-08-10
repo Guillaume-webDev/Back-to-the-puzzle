@@ -23,13 +23,10 @@ body{
 
 }
 .gifdelo{
-  display: flex;
-  justify-content: center;
   height: 200px;
   width: 23vw;
   background-image: url('./Images/good212419.gif');
-  align-content: flex-end;
-  justify-content: center;
+
 }
 
 #title{
@@ -67,18 +64,15 @@ body{
   text-align: center;
   font-size: 50px;
 }
-.hidden {
-  display: none;
-}
 .grid {
   display: flex;
   flex-wrap: wrap;
   border: 1px solid white;
   background-color: black;
-  width: 1000px;
-  height: 500px;
+  width: 700px;
+  padding: 1rem 0;
   position: fixed;
-  top: 20vh;
+  top: 12vh;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -87,22 +81,38 @@ body{
   border: 1px solid white;
   width: 80px;
   height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100%;
 }
 .delorean {
-  background-image: url(./Images/deloreanresize.jpg);
-}
-.hoverboard{
-  background-image: url(./Images/hoverboard.png)
-}
-.cityhall{
-  background-image: url(./Images/cityhall.png);
+  background-image: url(./Images/delorean.jpg);
 }
 .mcfly{
-  background-image: url(./Images/mcfly.jpg);
+  background-image: url(./Images/mcfly-removebg-preview.jpg);
 }
 .curve{
   background-image: url(./Images/curve.png);
 }
 .straight{
   background-image: url(./Images/straight.png);
+}
+.hidden {
+   display: none;
+}
+
+.straight.horizontal{
+    transform: rotate(90deg);
+}
+.curve.northEast{
+  transform: rotate(180deg);
+}
+.curve.southEast{
+  transform: rotate(270deg);
+}
+.curve.southWest{
+    transform: rotate(0deg);
+}
+.curve.northWest{
+    transform: rotate(90deg);
 }
