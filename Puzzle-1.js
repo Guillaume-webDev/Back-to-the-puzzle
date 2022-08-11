@@ -65,6 +65,13 @@ grid.addEventListener("click", (event) => {
       event.target.classList.remove("northWest");
     }
   }
+  // Turns a value into a string representation of the value in a standardised format.
+//It makes it easier to compare values like arrays or objects where we're interested
+// in seeing if the structure and contents are the same.
+const currentMap = getMapFromCurrentGame ();
+if (JSON.stringify(currentMap) == JSON.stringify(winMap)) {
+  setTimeout(() => alert('You won !!'), 10);
+}
 });
 const map = [
   ["delorean", "straight", "straight", "curve southWest"],
@@ -214,13 +221,11 @@ function getMapFromCurrentGame() {
   });
 }
 
-// iteration 1
-
-// don't know how to implement that function when the user finish the puzzle and then display the alert You won !!
-
-// function checkWin() {
-//   alert("You won!!")
-// }
+function result () {
+  if (winMap) {
+    alert("You won!!")
+  }
+}
 
 //iteration 2 and 3
 
