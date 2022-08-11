@@ -8,6 +8,7 @@ let time = null;
 const section = document.querySelector(".grid");
 
 restartButton.addEventListener("click", () => {
+  reset()
   startGame();
 });
 
@@ -38,6 +39,7 @@ function createCell() {
 }
 
 function addCells() {
+  cells.splice(0, cells.length);
   for (let i = 0; i < gridWidth * gridHeight; i++) {
     createCell();
   }
@@ -67,12 +69,17 @@ grid.addEventListener("click", (event) => {
   //It makes it easier to compare values like arrays or objects where we're interested
   // in seeing if the structure and contents are the same.
   const currentMap = getMapFromCurrentGame();
-  if (JSON.stringify(currentMap) == JSON.stringify(winMap)) {
+  if (JSON.stringify(currentMap) === JSON.stringify(winMap)) {
     setTimeout(() => alert("You won !!"), 10);
-    clearInterval(time);
-    time = null;
+    reset();
   }
 });
+
+function reset() {
+  clearInterval(time);
+  time = null;
+}
+
 const map = [
   "cell delorean",
   "cell straight",
@@ -219,18 +226,11 @@ function getMapFromCurrentGame() {
   });
 }
 
-function result() {
-  if (winMap) {
-    alert("You won!!");
-  }
-}
-
 function myTimer() {
   document.getElementById("timer").innerHTML = sec + " sec left";
   sec--;
   if (sec == -1) {
-    clearInterval(time);
-    time = null;
+    reset()
     alert("GREAT SCOTT ! You loose");
   }
 }
