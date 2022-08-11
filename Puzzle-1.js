@@ -66,7 +66,6 @@ function addCells() {
 
 grid.addEventListener("click", (event) => {
   event.target.classList.toggle("horizontal");
-  console.log(event.target.className);
   if (event.target.classList.contains("curve")) {
     if (event.target.classList.contains("southWest")) {
       event.target.classList.add("northWest");
