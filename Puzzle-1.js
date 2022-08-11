@@ -5,6 +5,18 @@ const startButton = document.getElementById("startButton");
 
 startButton.addEventListener("click", () => {
   const section = document.querySelector(".grid");
+  let sec = 30;
+  let time = setInterval(myTimer, 1000);
+
+  function myTimer() {
+    
+    document.getElementById("timer").innerHTML = sec + " sec left";
+    sec--;
+    if (sec == -1) {
+      clearInterval(time);
+      alert("GREAT SCOTT ! You loose");
+    }
+  }
 
   if (section.classList.contains("hidden")) {
     // this SHOWS the form
@@ -229,6 +241,6 @@ function result () {
 
 //iteration 2 and 3
 
-//put a timer and start it when you open a new game and add a loosing condition when the timer is finished with an alert
+
 
 // and add a restart/reset button
