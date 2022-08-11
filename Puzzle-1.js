@@ -2,49 +2,28 @@ const rulesButton = document.getElementById("rulesButton");
 const gridWidth = 8;
 const gridHeight = 8;
 const startButton = document.getElementById("startButton");
-const restartButton = document.getElementById("restartButton")
+const restartButton = document.getElementById("restartButton");
+let sec = null;
+let time = null;
+const section = document.querySelector(".grid");
 
 restartButton.addEventListener("click", () => {
-  
-})
+  startGame();
+});
 
 startButton.addEventListener("click", () => {
-  const section = document.querySelector(".grid");
-  let sec = 45;
-  let time = setInterval(myTimer, 1000);
-
-  function myTimer() {
-    
-    document.getElementById("timer").innerHTML = sec + " sec left";
-    sec--;
-    if (sec == -1) {
-      clearInterval(time);
-      alert("GREAT SCOTT ! You loose");
-    }
-  }
-
-  if (section.classList.contains("hidden")) {
-    // this SHOWS the form
-    section.classList.remove("hidden");
-  } else {
-    // this HIDES the form
-    section.classList.add("hidden");
-  }
-  section.innerHTML = "";
-  addCells();
-
-  createMap();
+  startGame();
 });
 
 rulesButton.addEventListener("click", () => {
   const form = document.querySelector(".popUp");
 
-  if (form.style.display === "none") {
+  if (form.classList.contains("hidden")) {
     // this SHOWS the form
-    form.style.display = "block";
+    form.classList.remove("hidden");
   } else {
     // this HIDES the form
-    form.style.display = "none";
+    form.classList.add("hidden");
   }
 });
 const grid = document.querySelector(".grid");
@@ -65,7 +44,10 @@ function addCells() {
 }
 
 grid.addEventListener("click", (event) => {
-  event.target.classList.toggle("horizontal");
+  if (event.target.classList.contains("straight")) {
+    event.target.classList.toggle("horizontal");
+  }
+  console.log(event.target.className);
   if (event.target.classList.contains("curve")) {
     if (event.target.classList.contains("southWest")) {
       event.target.classList.add("northWest");
@@ -82,85 +64,85 @@ grid.addEventListener("click", (event) => {
     }
   }
   // Turns a value into a string representation of the value in a standardised format.
-//It makes it easier to compare values like arrays or objects where we're interested
-// in seeing if the structure and contents are the same.
-const currentMap = getMapFromCurrentGame ();
-if (JSON.stringify(currentMap) == JSON.stringify(winMap)) {
-  setTimeout(() => alert('You won !!'), 10);
-}
+  //It makes it easier to compare values like arrays or objects where we're interested
+  // in seeing if the structure and contents are the same.
+  const currentMap = getMapFromCurrentGame();
+  if (JSON.stringify(currentMap) == JSON.stringify(winMap)) {
+    setTimeout(() => alert("You won !!"), 10);
+    clearInterval(time);
+    time = null;
+  }
 });
 const map = [
-  ["delorean", "straight", "straight", "curve southWest"],
-  [
-    "curve southWest",
-    "straight",
-    "straight",
-    "curve southWest",
-    "curve southWest",
-    "straight",
-    "curve southWest",
-  ],
-  [
-    "curve southWest",
-    "straight",
-    "straight",
-    "straight",
-    "curve southWest",
-    "",
-    "straight",
-  ],
-  [
-    "",
-    "",
-    "curve southWest",
-    "straight",
-    "straight",
-    "straight",
-    "curve southWest",
-  ],
-  ["", "", "straight", ""],
-  [
-    "curve southWest",
-    "straight",
-    "curve southWest",
-    "",
-    "curve southWest",
-    "straight",
-    "straight",
-    "curve southWest",
-  ],
-  [
-    "straight",
-    "",
-    "",
-    "",
-    "straight",
-    "curve southWest",
-    "straight",
-    "curve southWest",
-  ],
-  [
-    "curve southWest",
-    "straight",
-    "straight",
-    "straight",
-    "curve southWest",
-    "curve southWest",
-    "straight",
-    "mcfly",
-  ],
+  "cell delorean",
+  "cell straight",
+  "cell straight",
+  "cell curve southWest",
+  "cell",
+  "cell",
+  "cell",
+  "cell",
+  "cell curve southWest",
+  "cell straight",
+  "cell straight",
+  "cell curve southWest",
+  "cell curve southWest",
+  "cell straight",
+  "cell curve southWest",
+  "cell",
+  "cell curve southWest",
+  "cell straight",
+  "cell straight",
+  "cell straight",
+  "cell curve southWest",
+  "cell",
+  "cell straight",
+  "cell",
+  "cell",
+  "cell",
+  "cell curve southWest",
+  "cell straight",
+  "cell straight",
+  "cell straight",
+  "cell curve southWest",
+  "cell",
+  "cell",
+  "cell",
+  "cell straight",
+  "cell",
+  "cell",
+  "cell",
+  "cell",
+  "cell",
+  "cell curve southWest",
+  "cell straight",
+  "cell curve southWest",
+  "cell",
+  "cell curve southWest",
+  "cell straight",
+  "cell straight",
+  "cell curve southWest",
+  "cell straight",
+  "cell",
+  "cell",
+  "cell",
+  "cell straight",
+  "cell curve southWest",
+  "cell straight",
+  "cell curve southWest",
+  "cell curve southWest",
+  "cell straight",
+  "cell straight",
+  "cell straight",
+  "cell curve southWest",
+  "cell curve southWest",
+  "cell straight",
+  "cell mcfly",
 ];
 
 function createMap() {
-  map.forEach((row, i) => {
-    row.forEach((cell, j) => {
-      if (!cell) {
-        return;
-      }
-      const classes = cell.split(" ");
-      //console.log(classes);
-      cells[i * 8 + j].classList.add(...classes);
-    });
+  document.querySelectorAll(".cell").forEach((cell, index) => {
+    cell.className = map[index];
   });
 }
 
@@ -173,63 +155,63 @@ const winMap = [
   "cell",
   "cell",
   "cell",
-  "cell curve horizontal southEast",
+  "cell curve southEast",
   "cell straight",
   "cell straight",
-  "cell curve horizontal northWest",
-  "cell curve horizontal southEast",
-  "cell straight",
-  "cell curve southWest",
-  "cell",
-  "cell curve northEast",
-  "cell straight",
-  "cell straight",
-  "cell straight",
-  "cell curve horizontal northWest",
-  "cell",
-  "cell straight horizontal",
-  "cell",
-  "cell",
-  "cell",
-  "cell curve horizontal southEast",
-  "cell straight",
-  "cell straight",
-  "cell straight",
-  "cell curve horizontal northWest",
-  "cell",
-  "cell",
-  "cell",
-  "cell straight horizontal",
-  "cell",
-  "cell",
-  "cell",
-  "cell",
-  "cell",
-  "cell curve horizontal southEast",
-  "cell straight",
-  "cell curve horizontal northWest",
-  "cell",
-  "cell curve horizontal southEast",
-  "cell straight",
+  "cell curve northWest",
+  "cell curve southEast",
   "cell straight",
   "cell curve southWest",
+  "cell",
+  "cell curve northEast",
+  "cell straight",
+  "cell straight",
+  "cell straight",
+  "cell curve northWest",
+  "cell",
+  "cell straight horizontal",
+  "cell",
+  "cell",
+  "cell",
+  "cell curve southEast",
+  "cell straight",
+  "cell straight",
+  "cell straight",
+  "cell curve northWest",
+  "cell",
+  "cell",
+  "cell",
+  "cell straight horizontal",
+  "cell",
+  "cell",
+  "cell",
+  "cell",
+  "cell",
+  "cell curve southEast",
+  "cell straight",
+  "cell curve northWest",
+  "cell",
+  "cell curve southEast",
+  "cell straight",
+  "cell straight",
+  "cell curve southWest",
   "cell straight horizontal",
   "cell",
   "cell",
   "cell",
   "cell straight horizontal",
-  "cell curve horizontal southEast",
+  "cell curve southEast",
   "cell straight",
-  "cell curve horizontal northWest",
+  "cell curve northWest",
   "cell curve northEast",
   "cell straight",
   "cell straight",
   "cell straight",
-  "cell curve horizontal northWest",
+  "cell curve northWest",
   "cell curve northEast",
   "cell straight",
-  "cell mcfly"
-]
+  "cell mcfly",
+];
 
 function getMapFromCurrentGame() {
   return cells.map(function (cell) {
@@ -237,8 +219,33 @@ function getMapFromCurrentGame() {
   });
 }
 
-function result () {
+function result() {
   if (winMap) {
-    alert("You won!!")
+    alert("You won!!");
   }
+}
+
+function myTimer() {
+  document.getElementById("timer").innerHTML = sec + " sec left";
+  sec--;
+  if (sec == -1) {
+    clearInterval(time);
+    time = null;
+    alert("GREAT SCOTT ! You loose");
+  }
+}
+
+function startGame() {
+  if (time) {
+    return;
+  }
+  sec = 45;
+  time = setInterval(myTimer, 1000);
+  if (section.classList.contains("hidden")) {
+    // this SHOWS the form
+    section.classList.remove("hidden");
+  }
+  section.innerHTML = "";
+  addCells();
+  createMap();
 }
