@@ -2,10 +2,15 @@ const rulesButton = document.getElementById("rulesButton");
 const gridWidth = 8;
 const gridHeight = 8;
 const startButton = document.getElementById("startButton");
+const restartButton = document.getElementById("restartButton")
+
+restartButton.addEventListener("click", () => {
+  
+})
 
 startButton.addEventListener("click", () => {
   const section = document.querySelector(".grid");
-  let sec = 30;
+  let sec = 45;
   let time = setInterval(myTimer, 1000);
 
   function myTimer() {
@@ -238,9 +243,3 @@ function result () {
     alert("You won!!")
   }
 }
-
-//iteration 2 and 3
-
-
-
-// and add a restart/reset button
