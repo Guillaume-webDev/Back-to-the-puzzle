@@ -9,6 +9,6 @@ The goal was to make a puzzle pipe game. All made with HTML, CSS and JAVASCRIPT.
 ## Why this one?
 Because i used to play a lot of those games on my mobile 
 
-[Demo Link to play the Game](https://lacharte.github.io/Back-to-the-puzzle/)
+## [Demo Link to play the Game](https://lacharte.github.io/Back-to-the-puzzle/)
 
 
